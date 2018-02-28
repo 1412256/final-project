@@ -4,7 +4,7 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-
+var mongoose = require('mongoose');
 var index = require('./routes/index');
 
 
@@ -23,6 +23,14 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
+//-----------------------------------Connect to mongodb 
+let uri = 'mongodb://khoa:khoa@cluster0-shard-00-00-bfwps.mongodb.net:27017,cluster0-shard-00-01-bfwps.mongodb.net:27017,cluster0-shard-00-02-bfwps.mongodb.net:27017/test?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin';
+mongoose.connect(uri);
+mongoose.Promise = global.Promise;
+let db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+console.log("connected to database");
+//--------------------------------------------------------
 
 
 // catch 404 and forward to error handler
@@ -42,16 +50,4 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
-
-
-
-
-
-
-
-
-
-
-
-
 module.exports = app;
