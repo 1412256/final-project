@@ -17,7 +17,8 @@ var UserSchema = new mongoose.Schema({
         type: String,
         enum: ['admin','manager','viewer'],
         default: 'viewer'
-    }
+    },
+    menus: [{type: Schema.Types.ObjectId, ref:'Menu'}]
 },{
         timestamps:true
 });
