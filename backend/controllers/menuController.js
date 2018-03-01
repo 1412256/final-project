@@ -1,0 +1,48 @@
+var Menu = require('../models/menu');
+var Category = require('../models/category');
+var async = require('async');
+//Get all request menu.
+exports.menu_request_list = function(req, res, next){
+    Menu.find()
+        .exec(function( err, list_request_menus){
+            if (err) {return next(err); }
+            res.json(list_request_menus);
+        });
+};
+
+//Get all publish menu.
+exports.menu_publish_list = function(req,res,next){
+    Menu.find({'isCheck':'true'})
+        .exec(function( err, list_publish_menus){
+            if (err) {return next(err); }
+            res.json(list_publish_menus);
+        })
+
+};
+
+//Get details of menu (include Categories).
+exports.menu_details = function(req,res,next) {
+    async.parallel({
+        menu: function(callback){
+
+            Menu.findById(req.param.id)
+                .exec(callback);
+        },
+
+        menu_categories: function(callback){
+            Category.find({'menu': req.param.id})
+                .exec(callback);
+        },
+
+    }, function(err, results) {
+        if (err) { return next(err); }
+        if (results.menu==null) { // No results.
+            var err = new Error('Menu not found');
+            err.status = 404;
+            return next(err);
+        }
+        // Successful, so render.
+        res.json({menu: results.menu, menu_categories: results.menu_categories });
+    }); 
+};
+
