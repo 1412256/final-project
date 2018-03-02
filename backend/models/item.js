@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-
+var Schema = mongoose.Schema;
 var ItemSchema = new mongoose.Schema({
     name: {
         type: String,

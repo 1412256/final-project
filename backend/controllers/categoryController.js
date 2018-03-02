@@ -2,7 +2,17 @@ var Category = require('../models/category');
 var Item = require('../models/item');
 
 var async = require('async');
+//Get all categories of a menu
+exports.category_list = function(req,res,next){
 
+    Category.find({},'name menu')
+        .populate('menu')
+        .exec(function(err, list_categories){
+            if (err) return next(err);
+            //Success
+            res.json(list_categories);
+        })
+}
 //Get details of category (include Items).
 exports.category_details = function(req,res,next) {
     async.parallel({
@@ -28,3 +38,14 @@ exports.category_details = function(req,res,next) {
         res.json({category: results.category, category_items: results.category_items });
     }); 
 };
+
+exports.category_create = function(req,res,next) {
+    var category = new Category(
+        {
+            name: req.body.name,
+        });
+    category.save(function(err,category){
+        if (err) {return next(err);}
+        res.json(category);
+    })
+}

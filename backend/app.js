@@ -33,7 +33,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/api',apiRoutes);
 app.use('/',index);
 //-----------------------------------Connect to mongodb 
-let uri = 'mongodb://khoa:khoa@cluster0-shard-00-00-bfwps.mongodb.net:27017,cluster0-shard-00-01-bfwps.mongodb.net:27017,cluster0-shard-00-02-bfwps.mongodb.net:27017/restaurant-manage?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin';
+let uri = 'mongodb://localhost/myapp';
 mongoose.connect(uri);
 mongoose.Promise = global.Promise;
 let db = mongoose.connection;

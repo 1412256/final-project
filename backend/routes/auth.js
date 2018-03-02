@@ -11,11 +11,6 @@ var requireLogin = passport.authenticate('local', {session: false});
 
 router.post('/register',AuthenticationController.register);
 router.post('/login',requireLogin,AuthenticationController.login);
-router.get('/register', function(req, res, next) {
-    res.render('register-test');
-});
-router.get('/protected', requireAuth ,function(req,res){
-    res.send({content: 'Success'});
-})
+
 module.exports = router;
 

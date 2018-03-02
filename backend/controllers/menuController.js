@@ -1,6 +1,7 @@
 var Menu = require('../models/menu');
 var Category = require('../models/category');
 var async = require('async');
+var authConfig = require('../config/auth');
 //Get all request menu.
 exports.menu_request_list = function(req, res, next){
     Menu.find()
@@ -46,3 +47,14 @@ exports.menu_details = function(req,res,next) {
     }); 
 };
 
+/* exports.menu_create = function(req,res,next) {
+
+    var menu = new Menu(
+        {
+            name: req.body.name,
+        });
+    menu.save(function(err,menu){
+        if (err) {return next(err);}
+        res.json(menu);
+    })
+} */
