@@ -58,3 +58,18 @@ exports.menu_details = function(req,res,next) {
         res.json(menu);
     })
 } 
+
+exports.check_menu = function(req,res,next){
+   var request_menu = Menu.findById(req.params.id);
+    var updateMenu = new Menu(
+        {
+            name: request_menu.name,
+            isCheck: 'true',
+            _id:req.params.id
+        });
+    Menu.findByIdAndUpdate(req.params.id , updateMenu , {}, function(err,menu){
+        if(err) {return next(err);}
+        res.json({message:"success accept a menu",publish: menu});
+    })
+
+}

@@ -9,5 +9,5 @@ router.use(bodyParser.urlencoded({ extended: true }));
 router.post('/create', menuController.menu_create);
 router.post('/:id',categoryController.category_create);
 router.get('/:id',categoryController.category_list);
-
+router.post('/:id/accept',menuController.check_menu);
 module.exports = router;
