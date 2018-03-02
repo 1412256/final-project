@@ -5,7 +5,7 @@ var async = require('async');
 //Get all categories of a menu
 exports.category_list = function(req,res,next){
 
-    Category.find({},'name menu')
+    Category.find({"menu":req.params.id},'name menu')
         .populate('menu')
         .exec(function(err, list_categories){
             if (err) return next(err);
@@ -43,6 +43,7 @@ exports.category_create = function(req,res,next) {
     var category = new Category(
         {
             name: req.body.name,
+            menu: req.params.id
         });
     category.save(function(err,category){
         if (err) {return next(err);}

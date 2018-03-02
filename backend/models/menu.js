@@ -10,7 +10,7 @@ var MenuSchema = new mongoose.Schema({
         type: Boolean,
         default: false
     },
-    creator: {type: Schema.Types.ObjectId, ref:'User',required: true},
-    categories: [{type: Schema.Types.ObjectId, ref: 'Category'}]
+    creator: {type: Schema.Types.ObjectId, ref:'User'},
+   
 });
 module.exports = mongoose.model('Menu',MenuSchema);

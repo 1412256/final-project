@@ -47,7 +47,7 @@ exports.menu_details = function(req,res,next) {
     }); 
 };
 
-/* exports.menu_create = function(req,res,next) {
+ exports.menu_create = function(req,res,next) {
 
     var menu = new Menu(
         {
@@ -57,4 +57,4 @@ exports.menu_details = function(req,res,next) {
         if (err) {return next(err);}
         res.json(menu);
     })
-} */
+} 

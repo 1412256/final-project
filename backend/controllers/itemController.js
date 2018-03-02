@@ -3,10 +3,10 @@ var Category = require('../models/category');
 var Item = require('../models/item');
 
 var async = require('async');
-//Get all categories of a menu
+//Get all items of a category
 exports.item_list = function(req,res,next){
 
-    Item.find({},'name category')
+    Item.find({"category": req.params.id},'name category')
         .populate('category')
         .exec(function(err, list_items){
             if (err) {return next(err);}
@@ -28,7 +28,8 @@ exports.item_create = function(req,res,next) {
     var item = new Item(
         {
             name: req.body.name,
-            price: req.body.price
+            price: req.body.price,
+            category: req.params.id
         });
     item.save(function(err,item){
         if (err) {return next(err);}
