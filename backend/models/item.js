@@ -10,6 +10,8 @@ var ItemSchema = new mongoose.Schema({
         type: Number,
         required:true
     },
+    imgdata: { type: Buffer },
+    imgcontentType: { type: String },
     category: {type: Schema.Types.ObjectId, ref:'Category'}
 })
 module.exports = mongoose.model('Item',ItemSchema);

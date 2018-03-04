@@ -1,7 +1,7 @@
 
 var Category = require('../models/category');
 var Item = require('../models/item');
-
+var fs = require('fs');
 var async = require('async');
 //Get all items of a category
 exports.item_list = function(req,res,next){
@@ -31,6 +31,10 @@ exports.item_create = function(req,res,next) {
             price: req.body.price,
             category: req.params.id
         });
+    var bitmap = fs.readFileSync(req.file.path);
+    item.imgdata = new Buffer(bitmap).toString('base64');
+    item.imgcontentType = 'image/png';
+
     item.save(function(err,item){
         if (err) {return next(err);}
         res.json(item);
