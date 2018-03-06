@@ -8,13 +8,13 @@ import {RegisterComponent} from './../register/register.component';
 import {MenuComponent} from './../menu/menu.component';
 import {MenulistComponent} from './../menulist/menulist.component';
 import { Route } from '@angular/compiler/src/core';
-
+import { AuthGuard } from '../_guard/auth-guard.service';
 const routes: Routes = [
-  {path:'',component:HomeComponent},
+  {path:'',component:HomeComponent,canActivate: [AuthGuard]},
   {path:'login',component:LoginComponent},
   {path:'register',component:RegisterComponent},
   {path:'menu/:id',component:MenuComponent},
-  {path:'menulist',component:MenulistComponent},
+  {path:'menu',component:MenulistComponent,canActivate: [AuthGuard]},
 ]
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

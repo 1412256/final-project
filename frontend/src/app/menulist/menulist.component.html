@@ -1,56 +1,22 @@
-<div class="menu-list">
-                        
-  <div class="menu-list-left">
-    <div class="rep-w3l-img">
-      <img src="assets/images/m1.jpg" alt=" " class="img-responsive">
+<ul>
+  <li *ngFor="let menu of menus">
+  <div class="menu-list">
+                          
+    <div class="menu-list-left">
+      <div class="rep-w3l-img">
+        <img src="assets/images/m1.jpg" alt=" " class="img-responsive">
+      </div>
+        <div class="rep-w3l-text">
+        <h4 >{{menu.name}}</h4>
+        <h6>Created by tienkhoa</h6>
+      </div>
+      
+      <div class="clearfix"> </div>
     </div>
-       <div class="rep-w3l-text">
-       <h4>Menu 01</h4>
-      <h6>Created by tienkhoa</h6>
+    <div class="menu-list-right">
+      <button  [routerLink]="['/menu', menu._id]"> </button>
     </div>
-    
     <div class="clearfix"> </div>
-  </div>
-  <div class="menu-list-right">
-    <button>Detail</button>
-  </div>
-  <div class="clearfix"> </div>
-</div>	
-
-<div class="menu-list">
-                        
-  <div class="menu-list-left">
-    <div class="rep-w3l-img">
-      <img src="assets/images/m1.jpg" alt=" " class="img-responsive">
-    </div>
-       <div class="rep-w3l-text">
-       <h4>Menu 01</h4>
-      <h6>Created by tienkhoa</h6>
-    </div>
-    
-    <div class="clearfix"> </div>
-  </div>
-  <div class="menu-list-right">
-    <button>Detail</button>
-  </div>
-  <div class="clearfix"> </div>
-</div>	
-
-<div class="menu-list">
-                        
-  <div class="menu-list-left">
-    <div class="rep-w3l-img">
-      <img src="assets/images/m1.jpg" alt=" " class="img-responsive">
-    </div>
-       <div class="rep-w3l-text">
-       <h4>Menu 01</h4>
-      <h6>Created by tienkhoa</h6>
-    </div>
-    
-    <div class="clearfix"> </div>
-  </div>
-  <div class="menu-list-right">
-    <button>Detail</button>
-  </div>
-  <div class="clearfix"> </div>
-</div>	
+  </div>	
+</li>
+</ul>

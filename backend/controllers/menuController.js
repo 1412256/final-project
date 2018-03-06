@@ -4,7 +4,7 @@ var async = require('async');
 var authConfig = require('../config/auth');
 //Get all request menu.
 exports.menu_request_list = function(req, res, next){
-    Menu.find()
+    Menu.find({'isCheck':'false'})
         .exec(function( err, list_request_menus){
             if (err) {return next(err); }
             res.json(list_request_menus);
@@ -15,8 +15,9 @@ exports.menu_request_list = function(req, res, next){
 exports.menu_publish_list = function(req,res,next){
     Menu.find({'isCheck':'true'})
         .exec(function( err, list_publish_menus){
-            if (err) {return next(err); }
-            res.json(list_publish_menus);
+            if (err) {return next(err); 
+            res.json({message:"success"})}
+            res.json({message: "success", list: list_publish_menus});
         })
 
 };

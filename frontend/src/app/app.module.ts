@@ -1,5 +1,8 @@
+import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpModule } from '@angular/http'
 import { AppRoutingModule } from './/app-routing/app-routing.module';
 
 import { AppComponent } from './app.component';
@@ -9,6 +12,15 @@ import { RegisterComponent } from './register/register.component';
 import { HomeComponent } from './home/home.component';
 import { MenuComponent } from './menu/menu.component';
 import { MenulistComponent } from './menulist/menulist.component';
+import { AlertComponent } from './alert/alert.component';
+
+import { AuthGuard} from './_guard/auth-guard.service';
+import { AlertService} from './_service/alert.service';
+import { AuthenticationService} from './_service/authencication.service';
+import { UserService} from './_service/user.service';
+import { MenuService} from './_service/menu.service';
+import { JwtInterceptorProvider} from './_helper/jwt.service';
+import { ErrorInterceptorProvider} from './_helper/error.service';
 
 
 @NgModule({
@@ -19,13 +31,25 @@ import { MenulistComponent } from './menulist/menulist.component';
     RegisterComponent,
     HomeComponent,
     MenuComponent,
-    MenulistComponent
+    MenulistComponent,
+    AlertComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    AuthGuard,
+    AlertService,
+    AuthenticationService,
+    UserService,
+    MenuService,
+    JwtInterceptorProvider,
+    ErrorInterceptorProvider
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
