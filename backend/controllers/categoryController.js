@@ -18,12 +18,12 @@ exports.category_details = function(req,res,next) {
     async.parallel({
         category: function(callback){
 
-            Category.findById(req.param.id)
+            Category.findById(req.params.id)
                 .exec(callback);
         },
 
         category_items: function(callback){
-            Item.find({'category': req.param.id})
+            Item.find({"category": req.params.id})
                 .exec(callback);
         },
 

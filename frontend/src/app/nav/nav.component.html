@@ -17,13 +17,15 @@
     <div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
       <nav>
         <ul class="nav navbar-nav">
-          <li class="active"><a class="scroll" href="index.html">Home</a></li>
+          <li><a class="scroll" routerLink="/">Home</a></li>
           <li><a href="#about" class="scroll hvr-bounce-to-bottom">About</a></li>
           <li><a href="#" routerLink='/menu' class="scroll hvr-bounce-to-bottom">Menu</a></li>
 
           
-          <li><a href="#" routerLink='/login' class="scroll hvr-bounce-to-bottom">Log in</a></li>
-          <li><a href="#" routerLink='/register'  class="scroll hvr-bounce-to-bottom">Register</a></li>
+          <li *ngIf="!currentUser"><a href="#" routerLink='/login' class="scroll hvr-bounce-to-bottom">Log in</a></li>
+          <li *ngIf="currentUser"><a href="#" routerLink='/login' class="scroll hvr-bounce-to-bottom">Log out</a></li>
+          <li *ngIf="!currentUser"><a href="#" routerLink='/register'  class="scroll hvr-bounce-to-bottom">Register</a></li>
+          <li *ngIf="currentUser"><a>Hi, {{currentUser.user.username}}</a></li>
         </ul>
       </nav>
     </div>

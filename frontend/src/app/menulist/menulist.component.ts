@@ -14,6 +14,6 @@ export class MenulistComponent implements OnInit {
     this.loadAllmenu();
   }
   private loadAllmenu(){
-    this.menuService.getAll().subscribe(menus => {this.menus = menus;})
+    this.menuService.getAllPublishMenu().subscribe(menus => {this.menus = menus;})
  }
 }

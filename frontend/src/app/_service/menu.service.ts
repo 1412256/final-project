@@ -8,9 +8,11 @@ import {Category} from '../_model/category';
 export class MenuService {
 
   constructor(private http: HttpClient) { }
-  getAll() {
-    return this.http.get<Menu[]>(appConfig.apiUrl + '/api/menu/request-menu');
+  getAllPublishMenu() {
+    return this.http.get<Menu[]>(appConfig.apiUrl + '/api/menu/publish-menu');
 }
-
+  getAllRequestMenu() {
+    return this.http.get<Menu[]>(appConfig.apiUrl + '/api/menu/request-menu');
+  }
 
 }

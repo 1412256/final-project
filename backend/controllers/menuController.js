@@ -14,11 +14,10 @@ exports.menu_request_list = function(req, res, next){
 //Get all publish menu.
 exports.menu_publish_list = function(req,res,next){
     Menu.find({'isCheck':'true'})
-        .exec(function( err, list_publish_menus){
-            if (err) {return next(err); 
-            res.json({message:"success"})}
-            res.json({message: "success", list: list_publish_menus});
-        })
+        .exec(function( err, list_request_menus){
+            if (err) {return next(err); }
+            res.json(list_request_menus);
+        });
 
 };
 
@@ -27,12 +26,12 @@ exports.menu_details = function(req,res,next) {
     async.parallel({
         menu: function(callback){
 
-            Menu.findById(req.param.id)
+            Menu.findById(req.params.id)
                 .exec(callback);
         },
 
         menu_categories: function(callback){
-            Category.find({'menu': req.param.id})
+            Category.find({'menu': req.params.id})
                 .exec(callback);
         },
 

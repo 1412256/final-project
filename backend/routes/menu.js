@@ -12,5 +12,6 @@ router.post('/create', menuController.menu_create);
 router.post('/:id',categoryController.category_create);
 router.get('/:id',categoryController.category_list);
 router.post('/:id/accept',menuController.check_menu);
+//router.get('/:id',menuController.menu_details);
 
 module.exports = router;

@@ -6,7 +6,7 @@ var async = require('async');
 //Get all items of a category
 exports.item_list = function(req,res,next){
 
-    Item.find({"category": req.params.id},'name category')
+    Item.find({"category": req.params.id})
         .populate('category')
         .exec(function(err, list_items){
             if (err) {return next(err);}

@@ -87,6 +87,7 @@ input[type="submit"],input[type="reset"],.w3ls_footer_grid_leftl,.w3ls_footer_gr
     -moz-transition: 0.5s all;
     -ms-transition: 0.5s all;
 }
+
 .header-bottom {
     padding: 0.7em 3em;
 }
@@ -1029,9 +1030,9 @@ p.con {
 	margin-left:40%
 	
 }
-.span1_of_1:nth-child(2) {
+/* .span1_of_1:nth-child(2) {
    
-}
+} */
 .book-form i {
     position: absolute;
     color: #ff3c41;

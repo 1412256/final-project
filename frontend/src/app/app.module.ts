@@ -15,12 +15,15 @@ import { MenulistComponent } from './menulist/menulist.component';
 import { AlertComponent } from './alert/alert.component';
 
 import { AuthGuard} from './_guard/auth-guard.service';
+import { RoleGuard} from './_guard/role-guard.service';
 import { AlertService} from './_service/alert.service';
 import { AuthenticationService} from './_service/authencication.service';
 import { UserService} from './_service/user.service';
 import { MenuService} from './_service/menu.service';
 import { JwtInterceptorProvider} from './_helper/jwt.service';
 import { ErrorInterceptorProvider} from './_helper/error.service';
+import { CategoryComponent } from './category/category.component';
+import { AdmincheckComponent } from './admincheck/admincheck.component';
 
 
 @NgModule({
@@ -32,7 +35,9 @@ import { ErrorInterceptorProvider} from './_helper/error.service';
     HomeComponent,
     MenuComponent,
     MenulistComponent,
-    AlertComponent
+    AlertComponent,
+    CategoryComponent,
+    AdmincheckComponent
   ],
   imports: [
     BrowserModule,
@@ -43,6 +48,7 @@ import { ErrorInterceptorProvider} from './_helper/error.service';
   ],
   providers: [
     AuthGuard,
+    RoleGuard,
     AlertService,
     AuthenticationService,
     UserService,
