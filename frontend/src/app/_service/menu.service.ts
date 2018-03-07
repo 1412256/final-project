@@ -14,5 +14,9 @@ export class MenuService {
   getAllRequestMenu() {
     return this.http.get<Menu[]>(appConfig.apiUrl + '/api/menu/request-menu');
   }
-
+  /* checkmenu(id){
+    let headers = new Headers({ 'Content-Type': 'application/json' });
+    let options = new RequestOptions({ headers: headers });
+    return this.http.post(appConfig.apiUrl + '/api/menu'+ id)
+  } */
 }
