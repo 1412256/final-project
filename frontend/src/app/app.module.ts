@@ -26,6 +26,7 @@ import { CategoryComponent } from './category/category.component';
 import { AdmincheckComponent } from './admincheck/admincheck.component';
 import { MenuCreateComponent } from './menu-create/menu-create.component';
 import { ManagerdetailComponent } from './managerdetail/managerdetail.component';
+import { CategoryCreateComponent } from './category-create/category-create.component';
 
 
 @NgModule({
@@ -41,7 +42,8 @@ import { ManagerdetailComponent } from './managerdetail/managerdetail.component'
     CategoryComponent,
     AdmincheckComponent,
     MenuCreateComponent,
-    ManagerdetailComponent
+    ManagerdetailComponent,
+    CategoryCreateComponent
   ],
   imports: [
     BrowserModule,

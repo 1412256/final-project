@@ -21,7 +21,7 @@ export class MenuCreateComponent implements OnInit {
         .subscribe(
           data => {
           
-            this.router.navigate(['/menu']);
+            this.router.navigate(['/manager/menu']);
         },
         error => {
           console.log("error");

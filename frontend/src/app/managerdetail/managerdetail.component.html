@@ -1,4 +1,4 @@
-<h1>Menu created by</h1>
+<h1>Menu create by {{menus.creator.username}}</h1>
 <ul>
   <li *ngFor="let menu of menus.creator_menus">
   <div class="menu-list"  [routerLink]="['/menu', menu._id]">
@@ -9,9 +9,11 @@
       </div>
         <div class="rep-w3l-text"   >
         <h4 >{{menu.name}}</h4>
-        <h6>Created by tienkhoa</h6>
+        <h6>Created by {{menus.creator.username}}</h6>
+        <h6 *ngIf="menu.isCheck == 1"style="color:green">Published</h6>
+        <h5 *ngIf="menu.isCheck == 0" style="color:red">Waiting</h5>
       </div>
-      
+      <button>Add new category</button>
       <div class="clearfix"> </div>
     </div>
     <div class="menu-list-right">
