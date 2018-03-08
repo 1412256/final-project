@@ -24,6 +24,8 @@ import { JwtInterceptorProvider} from './_helper/jwt.service';
 import { ErrorInterceptorProvider} from './_helper/error.service';
 import { CategoryComponent } from './category/category.component';
 import { AdmincheckComponent } from './admincheck/admincheck.component';
+import { MenuCreateComponent } from './menu-create/menu-create.component';
+import { ManagerdetailComponent } from './managerdetail/managerdetail.component';
 
 
 @NgModule({
@@ -37,7 +39,9 @@ import { AdmincheckComponent } from './admincheck/admincheck.component';
     MenulistComponent,
     AlertComponent,
     CategoryComponent,
-    AdmincheckComponent
+    AdmincheckComponent,
+    MenuCreateComponent,
+    ManagerdetailComponent
   ],
   imports: [
     BrowserModule,

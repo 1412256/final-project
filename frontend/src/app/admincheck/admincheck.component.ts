@@ -17,7 +17,16 @@ export class AdmincheckComponent implements OnInit {
   private loadAllmenu(){
     this.menuService.getAllRequestMenu().subscribe(menus => {this.menus = menus;})
  }
- checkMenu(){
-    
+ checkMenu(menu){
+    this.menuService.checkmenu(menu).subscribe(
+      data => {
+        this.menuService.getAllRequestMenu().subscribe(menus => {this.menus = menus;});
+        return true;
+      },
+      error => {
+        console.error("Error saving food!");
+        return false;
+      }
+    )
  }
 }

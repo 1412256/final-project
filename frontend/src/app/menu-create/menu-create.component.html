@@ -1,0 +1,34 @@
+<h1 style="text-align:center">Create new menu </h1>
+<br>
+<br>
+<div class="book-form agileits-login">
+  <form (ngSubmit)="createMenu()" >
+    <div class="agileits_reservation_grid">
+      <div class="span1_of_1">
+        <label>Name: </label> 
+        <div class="book_date"> 
+          <i class="fa fa-keyboard-o" aria-hidden="true"></i>
+            <input id="name"  type="text"  name="name" [(ngModel)]="menu.name" #name="ngModel" required>
+
+        </div>					
+      </div>
+     <!--  <div class="span1_of_1">
+      
+        <label>Author </label>
+        <div class="section_room">
+          <i class="fa fa-user" aria-hidden="true"></i>
+          <input  id="author" type="text" name="author"  [(ngModel)]="menu.author" #author="ngModel" required>
+        </div>	
+      </div> -->
+     
+      <div class="span1_of_1">
+          <label>Your image </label>
+      <input name="myFile" type="file">
+    </div>
+      <div class="clearfix"></div>
+    </div> 
+    <input [disabled]="loading" type="submit" value="Create now!">
+  
+    </form>
+</div>
+

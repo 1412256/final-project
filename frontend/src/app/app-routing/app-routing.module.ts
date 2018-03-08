@@ -12,6 +12,8 @@ import { Route } from '@angular/compiler/src/core';
 import { AuthGuard } from '../_guard/auth-guard.service';
 import {RoleGuard} from   '../_guard/role-guard.service';
 import { CategoryComponent } from '../category/category.component';
+import { MenuCreateComponent } from '../menu-create/menu-create.component';
+import { ManagerdetailComponent } from '../managerdetail/managerdetail.component';
 const routes: Routes = [
   {path:'',component:HomeComponent,canActivate: [AuthGuard]},
   {path:'login',component:LoginComponent},
@@ -28,6 +30,22 @@ const routes: Routes = [
       expectedRole: 'admin'
     } 
   },
+  {
+    path:'manager/menu/create',
+  component:MenuCreateComponent,
+  canActivate: [RoleGuard], 
+  data: { 
+    expectedRole: 'manager'
+  }
+  },
+  {
+    path:'manager/menu',
+  component: ManagerdetailComponent,
+  canActivate: [RoleGuard], 
+  data: { 
+    expectedRole: 'manager'
+  }
+  }  
 ]
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

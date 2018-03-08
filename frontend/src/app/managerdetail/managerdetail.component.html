@@ -1,19 +1,15 @@
-<h1 style="text-align: center">Welcome admin</h1>
-<h2 style="text-align: center">Menu request</h2>
+<h1>Menu created by</h1>
 <ul>
-  <li *ngFor="let menu of menus">
-  <div class="menu-list">
+  <li *ngFor="let menu of menus.creator_menus">
+  <div class="menu-list"  [routerLink]="['/menu', menu._id]">
                           
     <div class="menu-list-left">
       <div class="rep-w3l-img">
         <img src="assets/images/m1.jpg" alt=" " class="img-responsive">
       </div>
         <div class="rep-w3l-text"   >
-        <h4  [routerLink]="['/menu', menu._id]" >{{menu.name}}</h4>
-        <h6>Waiting for check</h6>
-        <button id="{{menu._id}}" (click)="checkMenu(menu._id)" >Accept</button>
-        <button>Reject</button>
-        
+        <h4 >{{menu.name}}</h4>
+        <h6>Created by tienkhoa</h6>
       </div>
       
       <div class="clearfix"> </div>

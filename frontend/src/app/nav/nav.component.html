@@ -23,6 +23,7 @@
 
           
           <li *ngIf="!currentUser"><a href="#" routerLink='/login' class="scroll hvr-bounce-to-bottom">Log in</a></li>
+          <!-- <li *ngIf="currentUser.user.role == 'manager' "><a href="#" routerLink='/manager/menu' class="scroll hvr-bounce-to-bottom">Manager Page</a></li> -->
           <li *ngIf="currentUser"><a href="#" routerLink='/login' class="scroll hvr-bounce-to-bottom">Log out</a></li>
           <li *ngIf="!currentUser"><a href="#" routerLink='/register'  class="scroll hvr-bounce-to-bottom">Register</a></li>
           <li *ngIf="currentUser"><a>Hi, {{currentUser.user.username}}</a></li>

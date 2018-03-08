@@ -52,6 +52,7 @@ exports.menu_details = function(req,res,next) {
     var menu = new Menu(
         {
             name: req.body.name,
+            creator: req.body.creator,
         });
     menu.save(function(err,menu){
         if (err) {return next(err);}
