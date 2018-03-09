@@ -12,8 +12,8 @@ import  {MenuService} from '../_service/menu.service';
 export class MenuComponent implements OnInit {
   id: number;
   private sub: any;
-  category: Category[] = [];
-  
+  //category: Category[] = [];
+  menus: any;
   constructor(private elementRef:ElementRef, private route: ActivatedRoute, private http: HttpClient, private menuService: MenuService) { }
 
   ngOnInit() {
@@ -32,10 +32,10 @@ export class MenuComponent implements OnInit {
     this.elementRef.nativeElement.appendChild(s1);
 }
   get(id){
-    return this.http.get<Category[]>(appConfig.apiUrl + '/api/menu/'+id);
+    return this.http.get(appConfig.apiUrl + '/api/menu/'+id);
   }
    getMenuDetail(id) {
-    this.get(id).subscribe(category => {this.category = category;})
+    this.get(id).subscribe(menus=> {this.menus = menus;})
   }
  
 }

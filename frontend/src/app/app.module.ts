@@ -20,6 +20,8 @@ import { AlertService} from './_service/alert.service';
 import { AuthenticationService} from './_service/authencication.service';
 import { UserService} from './_service/user.service';
 import { MenuService} from './_service/menu.service';
+import { CategoryService} from './_service/category.service';
+import { ItemService} from './_service/item.service';
 import { JwtInterceptorProvider} from './_helper/jwt.service';
 import { ErrorInterceptorProvider} from './_helper/error.service';
 import { CategoryComponent } from './category/category.component';
@@ -27,6 +29,7 @@ import { AdmincheckComponent } from './admincheck/admincheck.component';
 import { MenuCreateComponent } from './menu-create/menu-create.component';
 import { ManagerdetailComponent } from './managerdetail/managerdetail.component';
 import { CategoryCreateComponent } from './category-create/category-create.component';
+import { ItemCreateComponent } from './item-create/item-create.component';
 
 
 @NgModule({
@@ -43,7 +46,8 @@ import { CategoryCreateComponent } from './category-create/category-create.compo
     AdmincheckComponent,
     MenuCreateComponent,
     ManagerdetailComponent,
-    CategoryCreateComponent
+    CategoryCreateComponent,
+    ItemCreateComponent
   ],
   imports: [
     BrowserModule,
@@ -59,6 +63,8 @@ import { CategoryCreateComponent } from './category-create/category-create.compo
     AuthenticationService,
     UserService,
     MenuService,
+    CategoryService,
+    ItemService,
     JwtInterceptorProvider,
     ErrorInterceptorProvider
   ],

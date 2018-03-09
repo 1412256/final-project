@@ -14,6 +14,8 @@ import {RoleGuard} from   '../_guard/role-guard.service';
 import { CategoryComponent } from '../category/category.component';
 import { MenuCreateComponent } from '../menu-create/menu-create.component';
 import { ManagerdetailComponent } from '../managerdetail/managerdetail.component';
+import { CategoryCreateComponent } from '../category-create/category-create.component';
+import { ItemCreateComponent } from '../item-create/item-create.component';
 const routes: Routes = [
   {path:'',component:HomeComponent,canActivate: [AuthGuard]},
   {path:'login',component:LoginComponent},
@@ -21,7 +23,21 @@ const routes: Routes = [
   {path:'menu/:id',component:MenuComponent},
 
   {path:'menu',component:MenulistComponent,canActivate: [AuthGuard]},
-  {path:'category/:id',component:CategoryComponent},
+  {path:'category/:id',component:CategoryComponent, canActivate: [AuthGuard]},
+  {path:'menu/:id/create-category',
+  component:CategoryCreateComponent,
+  canActivate: [RoleGuard],
+  data:{
+    expectedRole: 'manager'
+  }
+},
+{path:'category/:id/create-item',
+  component:ItemCreateComponent,
+  canActivate: [RoleGuard],
+  data:{
+    expectedRole: 'manager'
+  }
+},
   { 
     path: 'admin', 
     component: AdmincheckComponent, 

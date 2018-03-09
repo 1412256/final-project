@@ -32,8 +32,9 @@ exports.item_create = function(req,res,next) {
             category: req.params.id
         });
     var bitmap = fs.readFileSync(req.file.path);
+    console.log(req.files);
     item.imgdata = new Buffer(bitmap).toString('base64');
-    item.imgcontentType = 'image/png';
+    item.imgcontentType = 'image/jpg';
 
     item.save(function(err,item){
         if (err) {return next(err);}

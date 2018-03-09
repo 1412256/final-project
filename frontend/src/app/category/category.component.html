@@ -2,11 +2,11 @@
 <div class="menu_w3ls_agile_top_section">
   
     <div class="ziehharmonika">
-<h3>category 1</h3>
-
+<h3 style="text-transform: uppercase">{{items.category.name}}</h3>
+<button [routerLink]="['/category', items.category._id,'create-item']">Add new item</button>
   </div>
   <ul style="list-style-type:none">
-    <li *ngFor="let item of item">
+    <li *ngFor="let item of items.category_items">
     <div>
         <div class="w3_agile_recipe-grid">
                   <div class="col-md-6 menu-grids">
@@ -14,7 +14,7 @@
                         
                     <div class="menu-text-left">
                       <div class="rep-w3l-img">
-                        <img src="assets/images/m1.jpg" alt=" " class="img-responsive">
+                        <img src="data:image/png;base64,{{item.imgdata}}" alt=" " class="img-responsive">
                       </div>
                          <div class="rep-w3l-text">
                          <h4>{{item.name}}</h4>

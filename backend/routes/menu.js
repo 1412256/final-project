@@ -10,7 +10,7 @@ router.get('/request-menu',menuController.menu_request_list);
 router.get('/publish-menu',menuController.menu_publish_list);
 router.post('/create', menuController.menu_create);
 router.post('/:id',categoryController.category_create);
-router.get('/:id',categoryController.category_list);
+router.get('/:id',menuController.menu_details);
 router.post('/:id/accept',menuController.check_menu);
 //router.get('/:id',menuController.menu_details);
 

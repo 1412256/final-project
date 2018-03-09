@@ -13,16 +13,16 @@ export class CategoryComponent implements OnInit {
   constructor(private elementRef: ElementRef, private route: ActivatedRoute, private http: HttpClient) { }
   id: number;
   private sub: any;
-  item: Item[] = [];
+  items: {}; 
   ngOnInit() {
     this.getCategoryDetail(this.route.snapshot.params['id']);
 
 
   }
   get(id){
-    return this.http.get<Item[]>(appConfig.apiUrl + '/api/category/'+id);
+    return this.http.get(appConfig.apiUrl + '/api/category/'+id);
   }
    getCategoryDetail(id) {
-    this.get(id).subscribe(item => {this.item = item;})
+    this.get(id).subscribe(items => {this.items = items;})
   }
 }
