@@ -30,6 +30,12 @@ menu: Menu;
                                 .set('Accept', 'application/json')
                                 .set('Access-Control-Allow-Headers', 'Content-Type')});
   }
+  updateMenu(menu: Menu,id){
+    return this.http.post(appConfig.apiUrl +'/api/menu/'+id+ '/update',menu, {
+      headers: new HttpHeaders().set('Content-Type', 'application/json')
+                                .set('Accept', 'application/json')
+                                .set('Access-Control-Allow-Headers', 'Content-Type')})
+  }
   GetAllMenuByAManager(){
 
     let currentUser = JSON.parse(localStorage.getItem('currentUser'));

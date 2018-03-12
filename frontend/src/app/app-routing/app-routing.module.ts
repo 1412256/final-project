@@ -13,9 +13,15 @@ import { AuthGuard } from '../_guard/auth-guard.service';
 import {RoleGuard} from   '../_guard/role-guard.service';
 import { CategoryComponent } from '../category/category.component';
 import { MenuCreateComponent } from '../menu-create/menu-create.component';
+
+import { MenuUpdateComponent } from "../menu-update/menu-update.component";
+import { CategoryUpdateComponent } from "../category-update/category-update.component";
+import { ItemUpdateComponent } from "../item-update/item-update.component";
+
 import { ManagerdetailComponent } from '../managerdetail/managerdetail.component';
 import { CategoryCreateComponent } from '../category-create/category-create.component';
 import { ItemCreateComponent } from '../item-create/item-create.component';
+import { ItemComponent } from '../item/item.component';
 const routes: Routes = [
   {path:'',component:HomeComponent,canActivate: [AuthGuard]},
   {path:'login',component:LoginComponent},
@@ -24,6 +30,7 @@ const routes: Routes = [
 
   {path:'menu',component:MenulistComponent,canActivate: [AuthGuard]},
   {path:'category/:id',component:CategoryComponent, canActivate: [AuthGuard]},
+  {path:'item/:id', component:ItemComponent, canActivate: [AuthGuard]},
   {path:'menu/:id/create-category',
   component:CategoryCreateComponent,
   canActivate: [RoleGuard],
@@ -31,8 +38,29 @@ const routes: Routes = [
     expectedRole: 'manager'
   }
 },
+{path:'menu/:id/update',
+  component: MenuUpdateComponent,
+  canActivate: [RoleGuard],
+  data:{
+    expectedRole: 'manager'
+  }
+},
 {path:'category/:id/create-item',
   component:ItemCreateComponent,
+  canActivate: [RoleGuard],
+  data:{
+    expectedRole: 'manager'
+  }
+},
+{path:'category/:id/update',
+  component:CategoryUpdateComponent,
+  canActivate: [RoleGuard],
+  data:{
+    expectedRole: 'manager'
+  }
+},
+{path:'item/:id/update',
+  component:ItemUpdateComponent,
   canActivate: [RoleGuard],
   data:{
     expectedRole: 'manager'

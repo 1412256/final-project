@@ -1,8 +1,8 @@
-<h1 style="text-align:center">Create new item </h1>
+<h1 style="text-align:center">Update item </h1>
 <br>
 <br>
 <div class="book-form agileits-login">
-  <form (ngSubmit)="createItem()" enctype="multipart/form-data" >
+  <form (ngSubmit)="updateItem()" enctype="multipart/form-data" >
     <div class="agileits_reservation_grid">
       <div class="span1_of_1">
         <label>Item Name: </label> 
@@ -34,8 +34,7 @@
           <i class="" aria-hidden="true"></i>
           <!--   <img id = 'image' name='image' alt='your image' width='200' height='200'>
           <input id= "img"  type="file" accept='image/*'  name="img" [(ngModel)]="item.img.file[0]" #img="ngModel"  onchange="document.getElementById('image').src = window.URL.createObjectURL(this.files[0]);"> -->
-          
-          <input type="file" id="file" (change)="fileChangeEvent($event)" placeholder="Upload file..." />
+           <input type="file" id="file" (change)="fileChangeEvent($event)" placeholder="Upload file..." />
          
         </div>					
       </div>

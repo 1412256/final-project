@@ -30,6 +30,10 @@ import { MenuCreateComponent } from './menu-create/menu-create.component';
 import { ManagerdetailComponent } from './managerdetail/managerdetail.component';
 import { CategoryCreateComponent } from './category-create/category-create.component';
 import { ItemCreateComponent } from './item-create/item-create.component';
+import { ItemComponent } from './item/item.component';
+import { MenuUpdateComponent } from './menu-update/menu-update.component';
+import { CategoryUpdateComponent } from './category-update/category-update.component';
+import { ItemUpdateComponent } from './item-update/item-update.component';
 
 
 @NgModule({
@@ -47,7 +51,11 @@ import { ItemCreateComponent } from './item-create/item-create.component';
     MenuCreateComponent,
     ManagerdetailComponent,
     CategoryCreateComponent,
-    ItemCreateComponent
+    ItemCreateComponent,
+    ItemComponent,
+    MenuUpdateComponent,
+    CategoryUpdateComponent,
+    ItemUpdateComponent
   ],
   imports: [
     BrowserModule,

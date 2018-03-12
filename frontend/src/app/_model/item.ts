@@ -1,5 +1,6 @@
 export class Item{
     _id: string;
     name:string;
-    price: Number
+    price: Number;
+    img: String
 }

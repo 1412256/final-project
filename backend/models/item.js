@@ -10,7 +10,10 @@ var ItemSchema = new mongoose.Schema({
         type: Number,
         required:true
     },
-    imgdata: { type: Buffer },
+    ingredient: {
+        type: String,
+    },
+    imgdata: { type: String },
     imgcontentType: { type: String },
     category: {type: Schema.Types.ObjectId, ref:'Category'}
 })

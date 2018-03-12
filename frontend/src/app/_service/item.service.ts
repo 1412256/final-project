@@ -9,11 +9,10 @@ import {Category} from '../_model/category';
 export class ItemService {
 
   constructor(private http: HttpClient) { }
-  createItem(id , item: Item){
-    
-    return this.http.post(appConfig.apiUrl +'/api/category/'+id,item, {
-      headers: new HttpHeaders().set('Content-Type', 'multipart/form-data')
+  updateItem(item,id){
+    return this.http.post(appConfig.apiUrl +'/api/item/'+id+ '/update',item, {
+      headers: new HttpHeaders().set('Content-Type', 'application/json')
                                 .set('Accept', 'application/json')
-                                .set('Access-Control-Allow-Headers', 'Content-Type')});
+                                .set('Access-Control-Allow-Headers', 'Content-Type')})
   }
 }

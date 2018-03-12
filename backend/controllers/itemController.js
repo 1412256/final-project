@@ -29,12 +29,14 @@ exports.item_create = function(req,res,next) {
         {
             name: req.body.name,
             price: req.body.price,
+            ingredient: req.body.ingredient,
             category: req.params.id
         });
-    var bitmap = fs.readFileSync(req.file.path);
+   
+    var bitmap = fs.readFileSync(req.files[0].path);
     console.log(req.files);
     item.imgdata = new Buffer(bitmap).toString('base64');
-    item.imgcontentType = 'image/jpg';
+    item.imgcontentType = 'image/png';
 
     item.save(function(err,item){
         if (err) {return next(err);}
@@ -47,10 +49,17 @@ exports.item_update = function(req,res,next) {
         {
             name: req.body.name,
             price: req.body.price,
-            category: req.body.category,
+            ingredient: req.body.ingredient,
+            category: req.params.id,
             _id: req.params.id
         });
-    updateItem.findByIdandUpdate(req.params.id,updateItem, {}, function(err,item){
+    var bitmap = fs.readFileSync(req.files[0].path);
+    console.log(req.files);
+    updateItem.imgdata = new Buffer(bitmap).toString('base64');
+    updateItem.imgcontentType = 'image/png';
+
+
+    Item.findByIdAndUpdate(req.params.id,updateItem, {}, function(err,item){
         if(err) {return next(err);}
         res.json({message:"success",updatedItem: item});
     })

@@ -1,0 +1,20 @@
+<h1 style="text-align:center">Update category </h1>
+<br>
+<br>
+<div class="book-form agileits-login">
+  <form (ngSubmit)="updateCategory()" >
+    <div class="agileits_reservation_grid">
+      <div class="span1_of_1">
+        <label>New Category Name: </label> 
+        <div class="book_date"> 
+          <i class="fa fa-keyboard-o" aria-hidden="true"></i>
+            <input id="name"  type="text"  name="name" [(ngModel)]="category.name" #name="ngModel" required>
+
+        </div>					
+      </div>
+      <div class="clearfix"></div>
+    </div> 
+    <input [disabled]="loading" type="submit" value="Update it!">
+  
+    </form>
+</div>

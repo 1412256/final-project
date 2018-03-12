@@ -17,10 +17,7 @@
 				// Arrow down under headline
 				arrow: true,
 				// Opened/closed icon on the right hand side of the headline (either false or JSON containing symbols or image paths)
-				collapseIcons: {
-					opened: '&ndash;',
-					closed: '+'
-				}
+				
 			}, actionOrSettings);
 		}
 		// actions

@@ -20,6 +20,6 @@ var upload = multer({ storage: storage });
 
 router.post('/create', categoryController.category_create);
 router.get('/:id',categoryController.category_details);
-router.post('/:id',  upload.single('img'), itemController.item_create);
-
+router.post('/:id',upload.array("uploads[]", 12), itemController.item_create);
+router.post('/:id/update', categoryController.category_update);
 module.exports = router;

@@ -50,3 +50,15 @@ exports.category_create = function(req,res,next) {
         res.json(category);
     })
 }
+
+exports.category_update = function(req,res,next){
+    var update_category = new Category(
+        {
+        name: req.body.name,
+        _id:req.params.id
+    });
+    Category.findByIdAndUpdate(req.params.id, update_category,{}, function(err,update_category){
+        if(err) {return next(err);}
+        res.json(update_category);
+    })
+}

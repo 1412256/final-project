@@ -19,17 +19,7 @@ export class MenuComponent implements OnInit {
   ngOnInit() {
     this.getMenuDetail(this.route.snapshot.params['id']);
 
-    var s = document.createElement("script");
-    s.type = "text/javascript";
-    s.src = "../assets/js/drop-menu.js";
-
-    this.elementRef.nativeElement.appendChild(s);
-
-    var s1 = document.createElement("script");
-    s.type = "text/javascript";
-    s.src = "../assets/js/ziehharmonika.js";
-
-    this.elementRef.nativeElement.appendChild(s1);
+    
 }
   get(id){
     return this.http.get(appConfig.apiUrl + '/api/menu/'+id);

@@ -16,4 +16,10 @@ export class CategoryService {
                                 .set('Accept', 'application/json')
                                 .set('Access-Control-Allow-Headers', 'Content-Type')});
   }
+  updateCategory(category: Category,id){
+    return this.http.post(appConfig.apiUrl +'/api/category/'+ id + '/update',category, {
+      headers: new HttpHeaders().set('Content-Type', 'application/json')
+                                .set('Accept', 'application/json')
+                                .set('Access-Control-Allow-Headers', 'Content-Type')})
+  }
 }

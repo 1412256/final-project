@@ -59,7 +59,18 @@ exports.menu_details = function(req,res,next) {
         res.json(menu);
     })
 } 
-
+exports.menu_update = function(req,res,next){
+    var update_menu = new Menu(
+        {
+        name: req.body.name,
+        creator: req.body.creator,
+        _id:req.params.id
+    });
+    Menu.findByIdAndUpdate(req.params.id, update_menu,{}, function(err,update_menu){
+        if(err) {return next(err);}
+        res.json(update_menu);
+    })
+}
 exports.check_menu = function(req,res,next){
    var request_menu = Menu.findById(req.params.id);
     var updateMenu = new Menu(

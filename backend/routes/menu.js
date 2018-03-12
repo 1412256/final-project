@@ -13,5 +13,5 @@ router.post('/:id',categoryController.category_create);
 router.get('/:id',menuController.menu_details);
 router.post('/:id/accept',menuController.check_menu);
 //router.get('/:id',menuController.menu_details);
-
+router.post('/:id/update', menuController.menu_update);
 module.exports = router;

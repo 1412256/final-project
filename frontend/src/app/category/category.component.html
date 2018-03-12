@@ -3,22 +3,23 @@
   
     <div class="ziehharmonika">
 <h3 style="text-transform: uppercase">{{items.category.name}}</h3>
-<button [routerLink]="['/category', items.category._id,'create-item']">Add new item</button>
+<button class="fa fa-plus btn btn-success" [routerLink]="['/category', items.category._id,'create-item']">Add new item</button>
+<button class="fa fa-pencil btn btn-primary" [routerLink]="['/category', items.category._id,'update']">Update</button>
   </div>
-  <ul style="list-style-type:none">
+  <ul style="list-style-type:none"  >
     <li *ngFor="let item of items.category_items">
-    <div>
+    <div [routerLink]="['/item', item._id]">
         <div class="w3_agile_recipe-grid">
                   <div class="col-md-6 menu-grids">
                   <div class="menu-text">
                         
                     <div class="menu-text-left">
                       <div class="rep-w3l-img">
-                        <img src="data:image/png;base64,{{item.imgdata}}" alt=" " class="img-responsive">
+                        <img src="data:image/png;base64,{{item.imgdata}}"  style="width:100px;height:100px;" alt=" " class="img-responsive">
                       </div>
                          <div class="rep-w3l-text">
-                         <h4>{{item.name}}</h4>
-                        <h6>with wild mushrooms and asparagus</h6>
+                         <h4  [routerLink]="['/item', item._id]">{{item.name}}</h4>
+                        <h6>with {{item.ingredient}}</h6>
                       </div>
                       
                       <div class="clearfix"> </div>

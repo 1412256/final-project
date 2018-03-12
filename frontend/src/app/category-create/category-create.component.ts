@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import {Category} from '../_model/category';
 import {CategoryService} from '../_service/category.service';
 import { ActivatedRoute } from '@angular/router';
+
 @Component({
   selector: 'app-category-create',
   templateUrl: './category-create.component.html',

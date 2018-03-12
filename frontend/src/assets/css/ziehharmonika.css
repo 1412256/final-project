@@ -13,7 +13,8 @@
     transition: 0.25s all;
     position: relative;
     border: 6px solid #000;
-    font-weight: 600;
+	font-weight: 600;
+	margin-top:20px;
 }
 .ziehharmonika h3.active {
     margin-bottom: 21px;
