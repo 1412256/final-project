@@ -1,4 +1,4 @@
-<h1 style="text-align:center">Please log in first! </h1>
+<!-- <h1 style="text-align:center">Please log in first! </h1>
 <br>
 <br>
 <div class="book-form agileits-login">
@@ -13,7 +13,7 @@
         </div>					
       </div>
       <div class="span1_of_1">
-        <!-- start_section_room -->
+      
         <label>PASSWORD : </label>
         <div class="section_room">
           <i class="fa fa-key" aria-hidden="true"></i>
@@ -26,4 +26,30 @@
     <input [disabled]="loading" type="submit" value="Log in">
     <a [routerLink]="['/register']" class="btn btn-link">Register</a>
     </form>
+</div>
+ -->
+
+<div class="agile-login">
+  <h1>Login Form</h1>
+  <div class="wrapper">
+    <h2>Sign In</h2>
+    <div class="w3ls-form">
+      <form (ngSubmit)="login()">
+        <label>Username</label>
+        <input id="username" type="text" placeholder="Username" name="username" [(ngModel)]="model.username" #username="ngModel"
+          required>
+        <label>Password</label>
+        <input id="password" type="password" name="password" placeholder="Password" [(ngModel)]="model.password" #password="ngModel"
+          required>
+
+        <input type="submit" value="Log In" />
+
+        <a id="register" [routerLink]="['/register']"> Register</a>
+      </form>
+    </div>
+
+
+  </div>
+  <br>
+
 </div>

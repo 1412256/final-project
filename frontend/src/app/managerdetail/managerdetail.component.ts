@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {Menu} from '../_model/menu';
-import {MenuService} from '../_service/menu.service';
+import { Menu } from '../_model/menu';
+import { MenuService } from '../_service/menu.service';
 import 'rxjs/add/operator/map';
 
 @Component({
@@ -15,7 +15,7 @@ export class ManagerdetailComponent implements OnInit {
   ngOnInit() {
     this.loadAllmenuForManager();
   }
-  private loadAllmenuForManager(){
-    this.menuService.GetAllMenuByAManager().subscribe(res => {this.menus = res; console.log(res);})
- }
+  private loadAllmenuForManager() {
+    this.menuService.GetAllMenuByAManager().subscribe(res => { this.menus = res; console.log(res); })
+  }
 }

@@ -1042,6 +1042,25 @@ p.con {
 }
 .book-form input[type="submit"] {
     text-transform: uppercase;
+    background: #3be8b0;
+    color: #ffffff;
+    padding: 0.8em 2em;
+    border: none;
+    font-size: 1em;
+    margin-top: 1em;
+    outline: none;
+    -webkit-transition: .5s all;
+    -moz-transition: .5s all;
+	transition: .5s all;
+	margin-left:40%;
+	
+	width: 20%;
+}
+
+
+
+.book-form #cancel  {
+    text-transform: uppercase;
     background: #ff3c41;
     color: #ffffff;
     padding: 0.8em 2em;
@@ -1056,10 +1075,7 @@ p.con {
 	
 	width: 20%;
 }
-.book-form input[type="submit"]:hover{
-	background: #3be8b0;
-	color:#fff;
-} 
+ 
 .book-form ::-webkit-input-placeholder {
 	color:#999 !important;
 }

@@ -13,7 +13,7 @@ export class MenulistComponent implements OnInit {
   ngOnInit() {
     this.loadAllmenu();
   }
-  private loadAllmenu(){
-    this.menuService.getAllPublishMenu().subscribe(menus => {this.menus = menus;})
- }
+  private loadAllmenu() {
+    this.menuService.getAllPublishMenu().subscribe(menus => { this.menus = menus; })
+  }
 }

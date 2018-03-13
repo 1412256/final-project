@@ -8,9 +8,9 @@ describe('ManagerdetailComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ManagerdetailComponent ]
+      declarations: [ManagerdetailComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

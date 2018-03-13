@@ -14,7 +14,7 @@ export class RoleGuard implements CanActivate {
    
       if(currentUser.user.role == expectedRole){
         return true;
-        // not admin role, please log in with admin role
+        // not right role, redirect to login page
         
       }
       this.router.navigate(['/login']);
