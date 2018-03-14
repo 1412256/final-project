@@ -22,12 +22,15 @@ import { ManagerdetailComponent } from '../managerdetail/managerdetail.component
 import { CategoryCreateComponent } from '../category-create/category-create.component';
 import { ItemCreateComponent } from '../item-create/item-create.component';
 import { ItemComponent } from '../item/item.component';
+
+import {MenuManagerComponent} from '../menu-manager/menu-manager.component';
+import { AboutComponent } from '../about/about.component';
 const routes: Routes = [
   {path:'',component:HomeComponent,canActivate: [AuthGuard]},
   {path:'login',component:LoginComponent},
   {path:'register',component:RegisterComponent},
   {path:'menu/:id',component:MenuComponent},
-
+{path:'about',component:AboutComponent},
   {path:'menu',component:MenulistComponent,canActivate: [AuthGuard]},
   {path:'category/:id',component:CategoryComponent, canActivate: [AuthGuard]},
   {path:'item/:id', component:ItemComponent, canActivate: [AuthGuard]},
@@ -83,13 +86,23 @@ const routes: Routes = [
   }
   },
   {
-    path:'manager/menu',
+    path:'manager',
   component: ManagerdetailComponent,
   canActivate: [RoleGuard], 
   data: { 
     expectedRole: 'manager'
   }
-  }  
+  } ,
+
+  {
+    path:'manager/menu/:id',
+  component: MenuManagerComponent,
+  canActivate: [RoleGuard], 
+  data: { 
+    expectedRole: 'manager'
+  }
+  } 
+
 ]
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

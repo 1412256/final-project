@@ -14,6 +14,7 @@ export class MenuComponent implements OnInit {
   private sub: any;
   //category: Category[] = [];
   menus: any;
+  items: any;
   constructor(private elementRef:ElementRef, private route: ActivatedRoute, private http: HttpClient, private menuService: MenuService) { }
 
   ngOnInit() {
@@ -21,11 +22,17 @@ export class MenuComponent implements OnInit {
 
     
 }
-  get(id){
+  getMenu(id){
     return this.http.get(appConfig.apiUrl + '/api/menu/'+id);
   }
    getMenuDetail(id) {
-    this.get(id).subscribe(menus=> {this.menus = menus;})
+    this.getMenu(id).subscribe(menus=> {this.menus = menus;})
   }
  
+  getCategory(id){
+    return this.http.get(appConfig.apiUrl + '/api/category/'+id);
+  }
+   getCategoryDetail(id) {
+    this.getCategory(id).subscribe(items => {this.items = items;})
+  }
 }

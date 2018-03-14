@@ -9,7 +9,12 @@ html, body{
     font-family: 'Droid Sans', sans-serif;
 	background:#ffffff;
 	margin: 0;
+	background-image: url('assets/images/banner2.jpg');
+	background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
+
 p,ul li,ol li{
 	margin:0;
 	font-size:14px;

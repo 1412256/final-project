@@ -1,0 +1,24 @@
+<div class="agile_menu" id="menu">
+    <div class="container">
+   
+  
+  <h3 class="w3_heade_tittle_agile">{{menus.menu.name}}</h3>
+ 
+  <button class="fa fa-long-arrow-left btn btn-danger" [routerLink]="['/manager/menu']">Back</button>
+   <button class="fa fa-plus btn btn-primary" [routerLink]="['/menu', menus.menu._id,'create-category']">Add new category</button>
+  <div class="menu_w3ls_agile_top_section">
+  <div class="w3l_chill"> 
+          <img src="assets/images/ab1.jpg" alt=" " class="img-responsive">
+      </div> 
+    <div class="ziehharmonika">
+<ul style="list-style-type:none">
+  <li *ngFor="let menu of menus.menu_categories">
+    <h3 [routerLink]="['/category', menu._id]"> >{{menu.name}}</h3>
+  
+  </li>
+</ul>
+    </div>
+    </div>
+  
+    </div>
+    </div>

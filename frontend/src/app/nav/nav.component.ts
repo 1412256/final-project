@@ -10,7 +10,7 @@ import { ActivatedRoute, Router, NavigationStart } from '@angular/router';
   styleUrls: ['./nav.component.css']
 })
 export class NavComponent implements OnInit {
-  currentUser: User;
+  currentUser: any;
   constructor(private userService: UserService, private cdRef: ChangeDetectorRef, private elementRef: ElementRef, private router: Router) {
 
   }
@@ -18,5 +18,16 @@ export class NavComponent implements OnInit {
     this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
 
   }
-
+  showManagerPanel(){
+    if(this.currentUser && this.currentUser.user.role =="manager")
+        return true;
+    else
+        return false;
+}
+showAdminPanel(){
+  if(this.currentUser && this.currentUser.user.role =="admin")
+      return true;
+  else
+      return false;
+}
 }

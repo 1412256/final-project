@@ -1,6 +1,6 @@
 <h1>
   Menu create by {{menus.creator.username}}</h1>
-<button class="fa fa-plus btn btn-success" [routerLink]="['/manager/menu/create']"> Create new Menu </button>
+<button id="createnew" class="fa fa-plus btn btn-success" [routerLink]="['/manager/menu/create']"> Create new menu </button>
 <ul>
   <li *ngFor="let menu of menus.creator_menus">
     <div class="menu-list">
@@ -10,9 +10,8 @@
           <img src="assets/images/m1.jpg" alt=" " class="img-responsive">
         </div>
         <div class="rep-w3l-text">
-          <h4 [routerLink]="['/menu', menu._id]">{{menu.name}}</h4>
-          <h6>Created by {{menus.creator.username}}</h6>
-          <h6 *ngIf="menu.isCheck == 1" style="color:green">Published</h6>
+          <h4 [routerLink]="['/manager/menu/', menu._id]">{{menu.name}}</h4>
+          <h5 *ngIf="menu.isCheck == 1" style="color:green">Published</h5>
           <h5 *ngIf="menu.isCheck == 0" style="color:red">Waiting</h5>
         </div>
 

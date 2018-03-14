@@ -1,4 +1,4 @@
-<h1 style="text-align: center">Published Menu</h1>
+ <h1 style="text-align: center">Published Menu</h1>
 <ul>
   <li *ngFor="let menu of menus">
     <div class="menu-list" [routerLink]="['/menu', menu._id]">
@@ -9,7 +9,6 @@
         </div>
         <div class="rep-w3l-text">
           <h4>{{menu.name}}</h4>
-          <h6>Created by {{menu.creator.name}}</h6>
         </div>
 
         <div class="clearfix"> </div>
@@ -21,3 +20,5 @@
     </div>
   </li>
 </ul>
+
+

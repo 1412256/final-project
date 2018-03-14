@@ -34,6 +34,8 @@ import { ItemComponent } from './item/item.component';
 import { MenuUpdateComponent } from './menu-update/menu-update.component';
 import { CategoryUpdateComponent } from './category-update/category-update.component';
 import { ItemUpdateComponent } from './item-update/item-update.component';
+import { MenuManagerComponent } from './menu-manager/menu-manager.component';
+import { AboutComponent } from './about/about.component';
 
 
 @NgModule({
@@ -55,7 +57,9 @@ import { ItemUpdateComponent } from './item-update/item-update.component';
     ItemComponent,
     MenuUpdateComponent,
     CategoryUpdateComponent,
-    ItemUpdateComponent
+    ItemUpdateComponent,
+    MenuManagerComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,

@@ -38,7 +38,7 @@ export class LoginComponent implements OnInit {
                     this.router.navigate([this.returnUrl]);
                     window.location.reload();
                     let currentUser = JSON.parse(localStorage.getItem('currentUser'));
-                    if (currentUser.user.role == "manager") this.router.navigate(['/manager/menu']);
+                    if (currentUser.user.role == "manager") this.router.navigate(['/manager']);
                     if (currentUser.user.role == "admin") this.router.navigate(['/admin']);
                     if (currentUser.user.role == "viewer") this.router.navigate(['/menu']);
                 },

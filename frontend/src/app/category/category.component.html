@@ -3,6 +3,7 @@
   
     <div class="ziehharmonika">
 <h3 style="text-transform: uppercase">{{items.category.name}}</h3>
+<button class="fa fa-long-arrow-left btn btn-danger" [routerLink]="['/menu', items.category.menu]">Back to menu</button>
 <button class="fa fa-plus btn btn-success" [routerLink]="['/category', items.category._id,'create-item']">Add new item</button>
 <button class="fa fa-pencil btn btn-primary" [routerLink]="['/category', items.category._id,'update']">Update</button>
   </div>

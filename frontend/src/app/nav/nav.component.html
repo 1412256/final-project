@@ -26,7 +26,7 @@
             <a class="scroll" routerLink="/">Home</a>
           </li>
           <li>
-            <a href="#about" class="scroll hvr-bounce-to-bottom">About</a>
+            <a href="#about" routerLink='/about' class="scroll hvr-bounce-to-bottom">About</a>
           </li>
           <li>
             <a href="#" routerLink='/menu' class="scroll hvr-bounce-to-bottom">Menu</a>
@@ -36,9 +36,12 @@
           <li *ngIf="!currentUser">
             <a href="#" routerLink='/login' class="scroll hvr-bounce-to-bottom">Log in</a>
           </li>
-          <li *ngIf="currenUser && currentUser.user.role == 'manager' ">
-            <a href="#" routerLink='/manager/menu' class="scroll hvr-bounce-to-bottom">Manager Page</a>
+          <li *ngIf="showManagerPanel()">
+            <a href="#" routerLink='/manager' class="scroll hvr-bounce-to-bottom">Manager</a>
           </li>
+          <li *ngIf="showAdminPanel()">
+              <a href="#" routerLink='/admin' class="scroll hvr-bounce-to-bottom">Admin</a>
+            </li>
           <li *ngIf="currentUser">
             <a href="#" routerLink='/login' class="scroll hvr-bounce-to-bottom">Log out</a>
           </li>
@@ -46,7 +49,7 @@
             <a href="#" routerLink='/register' class="scroll hvr-bounce-to-bottom">Register</a>
           </li>
           <li *ngIf="currentUser">
-            <a>Hi, {{currentUser.user.username}}</a>
+            <a style="color:green; cursor:default;">Hi, {{currentUser.user.username}}</a>
           </li>
         </ul>
       </nav>
