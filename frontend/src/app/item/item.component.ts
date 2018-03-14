@@ -1,7 +1,9 @@
 import { Component, OnInit ,ElementRef} from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import {Item} from '../_model/item';
+import {ItemService} from '../_service/item.service';
 import { appConfig } from '../app.config';
 
 @Component({
@@ -11,7 +13,7 @@ import { appConfig } from '../app.config';
 })
 export class ItemComponent implements OnInit {
 
-  constructor(private elementRef: ElementRef, private route: ActivatedRoute, private http: HttpClient) { }
+  constructor(private elementRef: ElementRef, private route: ActivatedRoute, private http: HttpClient,private itemService: ItemService,private router:Router) { }
   item: {}; 
   ngOnInit() {
     this.getItemDetail(this.route.snapshot.params['id']);
@@ -22,4 +24,5 @@ export class ItemComponent implements OnInit {
    getItemDetail(id) {
     this.get(id).subscribe(item => {this.item = item;})
   }
+
 }

@@ -18,4 +18,7 @@ export class ManagerdetailComponent implements OnInit {
   private loadAllmenuForManager() {
     this.menuService.GetAllMenuByAManager().subscribe(res => { this.menus = res; console.log(res); })
   }
+  deletemenu(id){
+    this.menuService.DeleteMenu(id).subscribe(res => { console.log(res); });
+  }
 }

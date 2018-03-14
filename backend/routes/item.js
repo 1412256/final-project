@@ -20,4 +20,5 @@ debugger;
 router.post('/create', upload.single('file'), itemController.item_create);
 router.get('/:id',itemController.item_detail);
 router.post('/:id/update',upload.array("uploads[]", 12),itemController.item_update);
+router.post('/:id/delete',itemController.item_delete);
 module.exports = router;

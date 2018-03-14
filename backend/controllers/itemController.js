@@ -65,7 +65,7 @@ exports.item_update = function (req, res, next) {
     })
 }
 exports.item_delete = function (req, res, next) {
-    Item.findByIdAndRemove(req.param.id, function deleteItem(err) {
+    Item.findByIdAndRemove(req.params.id, function deleteItem(err) {
         if (err) { return next(err); }
         res.json({ message: "delete success" })
     })

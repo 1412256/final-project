@@ -21,7 +21,7 @@ export class CategoryCreateComponent implements OnInit {
         .subscribe(
           data => {
           
-            this.router.navigate(['menu/'+id]);
+            this.router.navigate(['manager/menu/'+id]);
         },
         error => {
           console.log("error");

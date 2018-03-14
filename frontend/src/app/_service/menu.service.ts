@@ -43,4 +43,10 @@ menu: Menu;
     console.log(id);
     return this.http.get(appConfig.apiUrl + '/api/manager/'+ id);
   }
+  DeleteMenu(id){
+    return this.http.post(appConfig.apiUrl +'/api/menu/'+ id + '/delete',{
+      headers: new HttpHeaders().set('Content-Type', 'application/json')
+                                .set('Accept', 'application/json')
+                                .set('Access-Control-Allow-Headers', 'Content-Type')})
+  }
 }

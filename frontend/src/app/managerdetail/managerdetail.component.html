@@ -1,6 +1,8 @@
 <h1>
   Menu create by {{menus.creator.username}}</h1>
 <button id="createnew" class="fa fa-plus btn btn-success" [routerLink]="['/manager/menu/create']"> Create new menu </button>
+
+
 <ul>
   <li *ngFor="let menu of menus.creator_menus">
     <div class="menu-list">
@@ -16,6 +18,7 @@
         </div>
 
         <button class="fa fa-edit btn btn-primary" [routerLink]="['/menu/', menu._id,'update']">Update menu</button>
+        <button id="delete" class="fa fa-trash btn btn-danger" (click)="deletemenu(menu._id)"> Delete</button>
         <div class="clearfix"> </div>
       </div>
       <div class="clearfix"> </div>

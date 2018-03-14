@@ -1,7 +1,8 @@
 var Category = require('../models/category');
 var Item = require('../models/item');
-
+var ObjectId = require('mongodb').ObjectID;
 var async = require('async');
+var mongoose = require('mongoose');
 //Get all categories of a menu
 exports.category_list = function (req, res, next) {
 
@@ -63,8 +64,36 @@ exports.category_update = function (req, res, next) {
     })
 }
 exports.category_delete = function (req, res, next) {
-    Category.findByIdAndRemove(req.param.id, function deleteCategory(err) {
+    Category.findByIdAndRemove(req.params.id, function deleteCategory(err) {
         if (err) { return next(err); }
         res.json({ message: "delete success" })
     })
 }
+
+/* exports.category_delete = function (req, res, next) {
+    var objectId = new mongoose.Types.ObjectId(req.params.id)
+    console.log(objectId);
+    async.parallel({
+       
+        category: function (callback) {
+
+            Category.findByIdAndRemove(req.params.id)
+                .exec(callback);
+        },
+
+        category_items: function (callback) {
+            Item.findByIdAndRemove({ "category": objectId})
+                .exec(callback);
+        },
+
+    }, function (err, results) {
+        if (err) { return next(err); }
+        if (results.category == null) { // No results.
+            var err = new Error('Category not found');
+            err.status = 404;
+            return next(err);
+        }
+        // Successful, send result
+        res.json({message: "success"});
+    });
+}; */

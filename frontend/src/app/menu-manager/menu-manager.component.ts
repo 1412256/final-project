@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { appConfig } from '../app.config';
 import { Category } from '../_model/category';
 import  {MenuService} from '../_service/menu.service';
-
+import  {CategoryService} from '../_service/category.service';
 @Component({
   selector: 'app-menu-manager',
   templateUrl: './menu-manager.component.html',
@@ -12,7 +12,7 @@ import  {MenuService} from '../_service/menu.service';
 })
 export class MenuManagerComponent implements OnInit {
   menus: any;
-  constructor(private elementRef:ElementRef, private route: ActivatedRoute, private http: HttpClient, private menuService: MenuService) { }
+  constructor(private elementRef:ElementRef, private route: ActivatedRoute, private http: HttpClient, private menuService: MenuService, private categoryService: CategoryService) { }
 
   ngOnInit() {
     this.getMenuDetail(this.route.snapshot.params['id']);
@@ -22,5 +22,15 @@ export class MenuManagerComponent implements OnInit {
   }
    getMenuDetail(id) {
     this.getMenu(id).subscribe(menus=> {this.menus = menus;})
+  }
+  deletecategory(id){
+    this.categoryService.DeleteCategory(id).subscribe( data => {
+          
+      this.getMenu(this.route.snapshot.params['id']).subscribe(menus => {this.menus = menus;})
+    },
+  error => {
+    console.log("error");
+  }
+    )
   }
 }

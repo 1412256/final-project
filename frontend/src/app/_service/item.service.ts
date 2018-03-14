@@ -15,4 +15,10 @@ export class ItemService {
                                 .set('Accept', 'application/json')
                                 .set('Access-Control-Allow-Headers', 'Content-Type')})
   }
+  DeleteItem(id){
+    return this.http.post(appConfig.apiUrl +'/api/item/'+ id + '/delete',{
+      headers: new HttpHeaders().set('Content-Type', 'application/json')
+                                .set('Accept', 'application/json')
+                                .set('Access-Control-Allow-Headers', 'Content-Type')})
+  }
 }

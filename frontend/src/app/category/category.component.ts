@@ -1,8 +1,9 @@
 import { Component, OnInit ,ElementRef} from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import {Item} from '../_model/item';
 import { appConfig } from '../app.config';
+import {ItemService} from '../_service/item.service';
 @Component({
   selector: 'app-category',
   templateUrl: './category.component.html',
@@ -10,7 +11,7 @@ import { appConfig } from '../app.config';
 })
 export class CategoryComponent implements OnInit {
 
-  constructor(private elementRef: ElementRef, private route: ActivatedRoute, private http: HttpClient) { }
+  constructor(private elementRef: ElementRef, private route: ActivatedRoute, private http: HttpClient, private itemService: ItemService, private router:Router) { }
   id: number;
   private sub: any;
   items: {}; 
@@ -24,5 +25,15 @@ export class CategoryComponent implements OnInit {
   }
    getCategoryDetail(id) {
     this.get(id).subscribe(items => {this.items = items;})
+  }
+  deleteitem(id){
+    this.itemService.DeleteItem(id).subscribe( data => {
+          
+      this.get(this.route.snapshot.params['id']).subscribe(items => {this.items = items;})
+    },
+  error => {
+    console.log("error");
+  }
+    )
   }
 }

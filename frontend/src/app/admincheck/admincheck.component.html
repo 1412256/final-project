@@ -11,8 +11,8 @@
         <div class="rep-w3l-text"   >
         <h4  [routerLink]="['/menu', menu._id]" >{{menu.name}}</h4>
         <h6>Waiting for check</h6>
-        <button id="{{menu._id}}" (click)="checkMenu(menu._id)" >Accept</button>
-        <button>Reject</button>
+        <button class="fa fa-check-circle btn btn-success" id="{{menu._id}}" (click)="checkMenu(menu._id)" >Accept</button>
+        <button class="fa fa-minus-circle btn btn-danger">Reject</button>
         
       </div>
       

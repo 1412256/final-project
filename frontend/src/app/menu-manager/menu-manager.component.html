@@ -1,11 +1,11 @@
-<div class="agile_menu" id="menu">
+
+<!-- <div class="agile_menu" id="menu">
     <div class="container">
    
   
   <h3 class="w3_heade_tittle_agile">{{menus.menu.name}}</h3>
  
-  <button class="fa fa-long-arrow-left btn btn-danger" [routerLink]="['/manager/menu']">Back</button>
-   <button class="fa fa-plus btn btn-primary" [routerLink]="['/menu', menus.menu._id,'create-category']">Add new category</button>
+  
   <div class="menu_w3ls_agile_top_section">
   <div class="w3l_chill"> 
           <img src="assets/images/ab1.jpg" alt=" " class="img-responsive">
@@ -21,4 +21,29 @@
     </div>
   
     </div>
-    </div>
+    </div> -->
+    <h3 style="text-transform: uppercase">{{menus.menu.name}}</h3>
+    <button class="fa fa-long-arrow-left btn btn-danger" [routerLink]="['/manager/menu']">Back</button>
+   <button class="fa fa-plus btn btn-primary" [routerLink]="['/menu', menus.menu._id,'create-category']">Add new category</button>
+    <ul>
+        <li *ngFor="let menu of menus.menu_categories">
+          <div class="menu-list" >
+      
+            <div class="menu-list-left">
+              <div class="rep-w3l-img">
+                <img src="assets/images/m1.jpg" alt=" " class="img-responsive">
+              </div>
+              <div class="rep-w3l-text">
+                <h4 [routerLink]="['/category', menu._id]">{{menu.name}}</h4>
+                <button class="fa fa-trash btn btn-danger" (click)="deletecategory(menu._id)">  Delete</button>
+              </div>
+      
+              <div class="clearfix"> </div>
+            </div>
+            <div class="menu-list-right">
+      
+            </div>
+            <div class="clearfix"> </div>
+          </div>
+        </li>
+      </ul>
