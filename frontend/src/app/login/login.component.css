@@ -90,6 +90,9 @@ cursor: pointer;
 a#register {
     text-align: center;
 }
+a#register:hover {
+    background-color:  rgba(13, 196, 83, 0.568); 
+}
 input[type="submit"]:hover {
 color: #fff;
 background-color:  rgba(179, 17, 17, 0.69);

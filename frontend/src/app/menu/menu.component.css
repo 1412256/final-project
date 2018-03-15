@@ -1,5 +1,5 @@
 .container{
-     margin-left:8%;
+     margin-left:5%;
 }
 
 .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
@@ -81,12 +81,20 @@ ul.item li {
     display: inline-block;
     vertical-align: top;
     margin-left:50px;
-    text-align: center
+    text-align: center;
 }
 .agileits-title{
     padding-bottom: 20px;
     font-size: 3rem;
     text-transform: capitalize;
+}
+@media only screen and (max-width: 768px) {
+    ul.item li{
+        margin-left: 0px;
+    }
+    .container{
+        margin-left:10%;
+   }
 }
 @media only screen and (max-width: 375px) {
     ul.item li{

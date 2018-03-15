@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {Menu} from '../_model/menu';
-import {MenuService} from '../_service/menu.service';
+import { Menu } from '../_model/menu';
+import { MenuService } from '../_service/menu.service';
 @Component({
   selector: 'app-admincheck',
   templateUrl: './admincheck.component.html',
@@ -14,13 +14,13 @@ export class AdmincheckComponent implements OnInit {
   ngOnInit() {
     this.loadAllmenu();
   }
-  private loadAllmenu(){
-    this.menuService.getAllRequestMenu().subscribe(menus => {this.menus = menus;})
- }
- checkMenu(menu){
+  private loadAllmenu() {
+    this.menuService.getAllRequestMenu().subscribe(menus => { this.menus = menus; })
+  }
+  checkMenu(menu) {
     this.menuService.checkmenu(menu).subscribe(
       data => {
-        this.menuService.getAllRequestMenu().subscribe(menus => {this.menus = menus;});
+        this.menuService.getAllRequestMenu().subscribe(menus => { this.menus = menus; });
         return true;
       },
       error => {
@@ -28,5 +28,16 @@ export class AdmincheckComponent implements OnInit {
         return false;
       }
     )
- }
+  }
+
+  deletemenu(id) {
+    this.menuService.DeleteMenu(id).subscribe(data => {
+
+      this.menuService.getAllRequestMenu().subscribe(menus => { this.menus = menus; })
+    },
+      error => {
+        console.log("error");
+      }
+    )
+  };
 }

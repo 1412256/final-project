@@ -1,0 +1,18 @@
+input {
+    outline: none;
+    color: #fff;
+    padding: 10px 0;
+    font-size: 1em;
+    width: 20%;
+    background: #e25433;
+    border: none;
+    text-transform: uppercase;
+    margin-left: 0em;
+}
+
+@media only screen and (max-width: 600px){
+    input{
+        width: 50%;
+        height:20%;
+    }
+}

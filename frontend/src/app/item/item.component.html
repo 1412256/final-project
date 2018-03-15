@@ -5,4 +5,4 @@
 
     <img src="data:image/png;base64,{{item.imgdata}}" alt=" ">
 </div>
-<button class="btn btn-primary" *ngIf="checkManager()">Update Item</button>
+<button class="btn btn-primary" *ngIf="checkManager()" [routerLink]="['/item/', item._id,'update']">Update Item</button>
