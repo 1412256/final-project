@@ -10,6 +10,7 @@
 }
 .nav-tabs > li > a {
     margin-right: 3px;
+    margin-top:3px;
     font-size: 1em;
     color: #212121;
     border: solid 2px #0ba382;

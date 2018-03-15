@@ -75,10 +75,30 @@ ul {
     width: 60%;
     margin-left: 20%;
 }
+.panel{
+    display:inline-block; 
+    width:50%; 
+    margin-left:30%
+}
+button#delete{
+    margin-left:40%;
+    margin-bottom: 10%;
+}
 @media only screen and (max-width: 600px) {
     ul {
         list-style-type: none;
         width: 100%;
         margin-left: 0%;
     }
+    button#back, button#create, button#update{
+        display:inline-block; 
+        width: 100%;
+        margin-left: 0%;
+        margin-bottom: 5%;
+    }
+    button#delete{
+        margin-left:30%;
+        margin-bottom: 10%;
+    }
 }
+

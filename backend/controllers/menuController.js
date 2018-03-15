@@ -86,7 +86,7 @@ exports.check_menu = function (req, res, next) {
 
 }
 exports.menu_delete = function (req, res, next) {
-    Menu.findByIdAndRemove(req.param.id, function deleteMenu(err) {
+    Menu.findByIdAndRemove(req.params.id, function deleteMenu(err) {
         if (err) { return next(err); }
         res.json({ message: "delete success" })
     })
