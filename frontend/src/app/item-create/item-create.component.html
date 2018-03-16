@@ -2,22 +2,22 @@
 <br>
 <br>
 <div class="book-form agileits-login">
-  <form (ngSubmit)="createItem()" enctype="multipart/form-data">
+  <form (ngSubmit)="f.form.valid && createItem()" enctype="multipart/form-data" #f="ngForm">
     <div class="agileits_reservation_grid">
       <div class="span1_of_1">
         <label>Item Name: </label>
         <div class="book_date">
           <i class="fa fa-keyboard-o" aria-hidden="true"></i>
           <input id="name" type="text" name="name" [(ngModel)]="item.name" #name="ngModel" required>
-
+          <div *ngIf="f.submitted && !name.valid" class="help-block">Item name is required</div>
         </div>
       </div>
       <div class="span1_of_1">
         <label>Price: </label>
         <div class="book_date">
           <i class="fa fa-dollar" aria-hidden="true"></i>
-          <input id="price" type="text" name="price" [(ngModel)]="item.price" #price="ngModel" required>
-
+          <input id="price" type="number" name="price" [(ngModel)]="item.price" #price="ngModel" required>
+          <div *ngIf="f.submitted && !price.valid" class="help-block">Price is required</div>
         </div>
       </div>
       <div class="span1_of_1">
@@ -25,7 +25,7 @@
         <div class="book_date">
           <i class="fa fa-list-ul" aria-hidden="true"></i>
           <input id="ingredient" type="text" name="ingredient" [(ngModel)]="item.ingredient" #ingredient="ngModel" required>
-
+          <div *ngIf="f.submitted && !ingredient.valid" class="help-block">Ingredient is required</div>
         </div>
       </div>
       <div class="span1_of_1">
@@ -36,11 +36,18 @@
           <input id= "img"  type="file" accept='image/*'  name="img" [(ngModel)]="item.img.file[0]" #img="ngModel"  onchange="document.getElementById('image').src = window.URL.createObjectURL(this.files[0]);"> -->
 
           <input type="file" id="file" (change)="fileChangeEvent($event)" placeholder="Upload file..." />
-
+          <div *ngIf="f.submitted && !file.valid" class="help-block">Please upload your image </div>
         </div>
       </div>
       <div class="clearfix"></div>
     </div>
+    <img style="position: absolute;
+        margin: auto;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;" *ngIf="loading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA=="
+    />
     <input [disabled]="loading" type="submit" value="Create now!">
 
   </form>

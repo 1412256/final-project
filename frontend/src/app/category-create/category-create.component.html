@@ -2,19 +2,19 @@
 <br>
 <br>
 <div class="book-form agileits-login">
-  <form (ngSubmit)="createCategory()" >
+  <form (ngSubmit)="f.form.valid && createCategory()" #f="ngForm">
     <div class="agileits_reservation_grid">
       <div class="span1_of_1">
-        <label>Category Name: </label> 
-        <div class="book_date"> 
+        <label>Category Name: </label>
+        <div class="book_date">
           <i class="fa fa-keyboard-o" aria-hidden="true"></i>
-            <input id="name"  type="text"  name="name" [(ngModel)]="category.name" #name="ngModel" required>
-
-        </div>					
+          <input id="name" type="text" name="name" [(ngModel)]="category.name" #name="ngModel" required>
+          <div *ngIf="f.submitted && !name.valid" class="help-block">Category name is required</div>
+        </div>
       </div>
       <div class="clearfix"></div>
-    </div> 
+    </div>
     <input [disabled]="loading" type="submit" value="Create now!">
-  
-    </form>
+
+  </form>
 </div>

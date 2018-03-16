@@ -1003,7 +1003,7 @@ p.con {
     padding: 3em 2em;
 	border: 1px solid #ddd;
 }
-.book-form input[type="text"],.book-form input[type="email"], .book-form input[type="password"], select#country, select#country1 {
+.book-form input[type="text"],.book-form input[type="email"], .book-form input[type="password"],.book-form input[type="number"], select#country, select#country1 {
     width: 100%;
     color: #292727;
     font-size: 0.9em;

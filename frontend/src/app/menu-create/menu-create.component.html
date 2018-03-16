@@ -2,14 +2,14 @@
 <br>
 <br>
 <div class="book-form agileits-login">
-  <form (ngSubmit)="createMenu()">
+  <form (ngSubmit)="f.form.valid && createMenu()" #f="ngForm">
     <div class="agileits_reservation_grid">
       <div class="span1_of_1">
         <label>Name: </label>
         <div class="book_date">
           <i class="fa fa-keyboard-o" aria-hidden="true"></i>
           <input id="name" type="text" name="name" [(ngModel)]="menu.name" #name="ngModel" required>
-
+          <div *ngIf="f.submitted && !name.valid" class="help-block">Menu name is required</div>
         </div>
       </div>
       <!--  <div class="span1_of_1">
