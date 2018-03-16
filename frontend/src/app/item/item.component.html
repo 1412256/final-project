@@ -1,8 +1,9 @@
-<div style="text-align:center">
-    <h1>Name: {{item.name}}</h1>
-    <h3>Ingredient: {{item.ingredient}}</h3>
-    <h3>Price: {{item.price}}$</h3>
+<ul style="text-align:center">
+    <li style="text-transform:uppercase; font-weight:bolder; font-size:2em">{{item.name}}</li>
+    <li style="font-size:1.2em; color:brown">Ingredient: {{item.ingredient}}</li>
+    <li>Price: {{item.price}}$</li>
 
     <img src="data:image/png;base64,{{item.imgdata}}" alt=" ">
-</div>
-<button class="btn btn-primary" *ngIf="checkManager()" [routerLink]="['/item/', item._id,'update']">Update Item</button>
+</ul>
+<button class="fa fa-long-arrow-left btn btn-danger" id="back" [routerLink]="['/category/', item.category._id]">Back to category</button>
+<button class="btn btn-primary" *ngIf="checkManager()" id="update" [routerLink]="['/item/', item._id,'update']">Update Item</button>

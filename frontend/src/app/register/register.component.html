@@ -49,20 +49,24 @@
   <div class="wrapper">
     <h2>Create new account</h2>
     <div class="w3ls-form">
-      <form (ngSubmit)="register()">
+      <form (ngSubmit)="f.form.valid && register()" #f="ngForm" novalidate>
         <label>Username</label>
-        <input id="username" type="text" placeholder="Username" name="username" [(ngModel)]="model.username" #username="ngModel"
-          required>
+        <input [ngClass]="{ 'has-error': f.submitted && !username.valid }" id="username" type="text" placeholder="Username" name="username"
+          [(ngModel)]="model.username" #username="ngModel" required>
+        <div *ngIf="f.submitted && !username.valid" class="help-block">Username is required</div>
         <label>Password</label>
-        <input id="password" type="password" name="password" placeholder="Password" [(ngModel)]="model.password" #password="ngModel"
-          required>
+        <input [ngClass]="{ 'has-error': f.submitted && !password.valid }" id="password" type="password" name="password" placeholder="Password"
+          [(ngModel)]="model.password" #password="ngModel" required>
+        <div *ngIf="f.submitted && !password.valid" class="help-block">Password is required</div>
         <label>Role</label>
         <select id="country" name="role" [(ngModel)]="model.role" #role="ngModel" required="">
           <option role="viewer">viewer</option>
           <option role="manager">manager</option>
         </select>
+        <div *ngIf="f.submitted && !role.valid" class="help-block">Please choose your role</div>
         <input type="submit" value="Register" />
-
+        <img *ngIf="loading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA=="
+        />
         <a id="cancel" [routerLink]="['/login']"> Cancel</a>
       </form>
     </div>

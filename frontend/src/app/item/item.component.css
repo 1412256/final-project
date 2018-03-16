@@ -1,17 +1,37 @@
 img {
     width: 70%;
- 
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
 }
-button{
+img:hover{
+box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+}
+button#back{
     width: 20%;
     margin-left: 40%;
-    margin-top: 20px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+button#update{
+    width: 20%;
+    margin-left: 40%;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 @media only screen and (max-width: 600px) {
-    button{
-        width:100% ;
-        margin-left: 0%;
+    
+    button#back{
+        width: 80%;
+        margin-left: 10%;
         margin-top: 20px;
+        margin-bottom: 10px;
+    }
+    button#update{
+        width: 80%;
+        margin-left: 10%;
+        margin-top: 10px;
+        margin-bottom: 10px;
     }
 }

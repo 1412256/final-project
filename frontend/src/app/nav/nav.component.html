@@ -40,8 +40,8 @@
             <a href="#" routerLink='/manager' class="scroll hvr-bounce-to-bottom">Manager</a>
           </li>
           <li *ngIf="showAdminPanel()">
-              <a href="#" routerLink='/admin' class="scroll hvr-bounce-to-bottom">Admin</a>
-            </li>
+            <a href="#" routerLink='/admin' class="scroll hvr-bounce-to-bottom">Admin</a>
+          </li>
           <li *ngIf="currentUser">
             <a href="#" routerLink='/login' class="scroll hvr-bounce-to-bottom">Log out</a>
           </li>
@@ -57,4 +57,7 @@
     <!-- /.navbar-collapse -->
   </nav>
 </div>
-<router-outlet></router-outlet>
+
+<router-outlet>
+  <app-alert></app-alert>
+</router-outlet>

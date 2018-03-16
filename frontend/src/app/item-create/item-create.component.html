@@ -2,46 +2,46 @@
 <br>
 <br>
 <div class="book-form agileits-login">
-  <form (ngSubmit)="createItem()" enctype="multipart/form-data" >
+  <form (ngSubmit)="createItem()" enctype="multipart/form-data">
     <div class="agileits_reservation_grid">
       <div class="span1_of_1">
-        <label>Item Name: </label> 
-        <div class="book_date"> 
+        <label>Item Name: </label>
+        <div class="book_date">
           <i class="fa fa-keyboard-o" aria-hidden="true"></i>
-            <input id="name"  type="text"  name="name" [(ngModel)]="item.name" #name="ngModel" required>
+          <input id="name" type="text" name="name" [(ngModel)]="item.name" #name="ngModel" required>
 
-        </div>					
+        </div>
       </div>
       <div class="span1_of_1">
-        <label>Price: </label> 
-        <div class="book_date"> 
-          <i class="fa fa-keyboard-o" aria-hidden="true"></i>
-            <input id="price"  type="text"  name="price" [(ngModel)]="item.price" #price="ngModel" required>
+        <label>Price: </label>
+        <div class="book_date">
+          <i class="fa fa-dollar" aria-hidden="true"></i>
+          <input id="price" type="text" name="price" [(ngModel)]="item.price" #price="ngModel" required>
 
-        </div>					
+        </div>
       </div>
       <div class="span1_of_1">
-        <label>Ingredient : </label> 
-        <div class="book_date"> 
-          <i class="fa fa-keyboard-o" aria-hidden="true"></i>
-            <input id="ingredient"  type="text"  name="ingredient" [(ngModel)]="item.ingredient" #ingredient="ngModel" required>
+        <label>Ingredient : </label>
+        <div class="book_date">
+          <i class="fa fa-list-ul" aria-hidden="true"></i>
+          <input id="ingredient" type="text" name="ingredient" [(ngModel)]="item.ingredient" #ingredient="ngModel" required>
 
-        </div>					
+        </div>
       </div>
       <div class="span1_of_1">
-        <label>Upload image</label> 
-        <div class="book_date"> 
+        <label>Upload image</label>
+        <div class="book_date">
           <i class="" aria-hidden="true"></i>
           <!--   <img id = 'image' name='image' alt='your image' width='200' height='200'>
           <input id= "img"  type="file" accept='image/*'  name="img" [(ngModel)]="item.img.file[0]" #img="ngModel"  onchange="document.getElementById('image').src = window.URL.createObjectURL(this.files[0]);"> -->
-          
+
           <input type="file" id="file" (change)="fileChangeEvent($event)" placeholder="Upload file..." />
-         
-        </div>					
+
+        </div>
       </div>
       <div class="clearfix"></div>
-    </div> 
+    </div>
     <input [disabled]="loading" type="submit" value="Create now!">
-  
-    </form>
+
+  </form>
 </div>

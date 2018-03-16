@@ -50,7 +50,6 @@ exports.item_update = function (req, res, next) {
             name: req.body.name,
             price: req.body.price,
             ingredient: req.body.ingredient,
-            category: req.params.id,
             _id: req.params.id
         });
     var bitmap = fs.readFileSync(req.files[0].path);

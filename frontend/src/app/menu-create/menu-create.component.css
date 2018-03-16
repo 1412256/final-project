@@ -1,0 +1,6 @@
+@media only screen and(max-width:600px) {
+.book-form button#submit {
+    width: 90%;
+    margin-left: 5%;
+    }
+}
