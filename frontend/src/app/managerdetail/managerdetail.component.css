@@ -80,6 +80,12 @@ button#createnew{
       font: size 1rem;
       justify-content: center
   }
+  h5{
+      margin-bottom:10px;
+  }
+  button#delete{
+      margin-left:150px;
+  }
   @media only screen and (max-width: 960px) {
     
     button#createnew{
@@ -91,7 +97,7 @@ button#createnew{
           justify-content: center
       }
 }
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 768px) {
     ul {
         list-style-type: none;
         width: 100%;
@@ -104,5 +110,87 @@ button#createnew{
           margin-bottom:5%;
           font: size 1rem;
           justify-content: center
+      }
+      button#delete, button#update{
+        margin-bottom:10px;
+        margin-left: 40px;
+     }
+     button#delete{
+         margin-left:100px;
+     }
+     h5{
+        margin-bottom:10px;
+    }
+}
+@media only screen and (max-width: 414px) {
+    ul {
+        list-style-type: none;
+        width: 100%;
+        margin-left: 0%;
+    }
+    button#createnew{
+        text-align:center;
+          width: 80%;
+          margin-left:10%;
+          margin-bottom:5%;
+          font: size 1rem;
+          justify-content: center
+      }
+      button#delete, button#update{
+         margin-bottom:10px;
+         margin-left: 10px;
+      }
+      button#delete{
+          margin-left:10px;
+      }
+      h5{
+          margin-bottom:10px;
+      }
+}
+@media only screen and (max-width: 375px) {
+    ul {
+        list-style-type: none;
+        width: 100%;
+        margin-left: 0%;
+    }
+    button#createnew{
+        text-align:center;
+          width: 80%;
+          margin-left:10%;
+          margin-bottom:5%;
+          font: size 1rem;
+          justify-content: center
+      }
+      button#delete, button#update{
+         margin-bottom:10px;
+         margin-left: 40px;
+      }
+      h5{
+          margin-bottom:10px;
+      }
+}
+@media only screen and (max-width: 360px) {
+    ul {
+        list-style-type: none;
+        width: 100%;
+        margin-left: 0%;
+    }
+    button#createnew{
+        text-align:center;
+          width: 80%;
+          margin-left:10%;
+          margin-bottom:5%;
+          font: size 1rem;
+          justify-content: center
+      }
+      button#delete, button#update{
+         margin-bottom:10px;
+         margin-left: 30px;
+      }
+      button#delete{
+          margin-left:30px;
+      }
+      h5{
+          margin-bottom:10px;
       }
 }
