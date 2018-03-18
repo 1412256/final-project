@@ -40,7 +40,7 @@ export class LoginComponent implements OnInit {
                     let currentUser = JSON.parse(localStorage.getItem('currentUser'));
                     if (currentUser.user.role == "manager") this.router.navigate(['/manager']);
                     if (currentUser.user.role == "admin") this.router.navigate(['/admin']);
-                    if (currentUser.user.role == "viewer") this.router.navigate(['/menu']);
+                    if (currentUser.user.role == "viewer") this.router.navigate(['/']);
                 },
                 error => {
                     this.alertService.error(error);
